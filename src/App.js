@@ -18,18 +18,30 @@ function App() {
                   <h1>🔥 BLACK BOOKS 🔥</h1>
                 <p>¿Te gusta perderte entre las profundidades de las letras? </p>
         </div>
-        <div class="libros">
-                  <h1>CAJAS DE LIBROS</h1>
-                <p>PONER 4 CAJAS</p>
-        </div>
-        <div class="peliculas">
-                  <h1>CAJAS DE PELÍCULAS</h1>
-                <p>PONER 4 CAJAS DE PLATAFORMA</p>
-        </div>
+  {/* Sección LIBROS (estructura corregida) */}
+  <div className="seccion-con-titulo">
+    <h2 className="titulo-seccion">📖 LIBROS 📖</h2>
+    <div className="libros">
+      <div className="libro"><h3>LIBRO ACTUAL</h3><p>Libro que actualmente estoy leyendo: Mundo Perdido</p>
+      </div>
+      <div className="libro"><h3>LIBRO POR MES</h3><p>Mi favorito del mes: Doctor Sueño</p></div>
+      <div className="libro"><h3>LIBRO POR ÉPOCA</h3><p>Esta primevera me leí: Doctor sueño</p></div>
+      <div className="libro"><h3>LIBRERÍA</h3><p>Librerías que son amor a primera vista</p></div>
+    </div>
+  </div>
 
-       
-      </main>
-      
+  {/* Sección PELÍCULAS (estructura corregida) */}
+  <div className="seccion-con-titulo">
+    <h2 className="titulo-seccion">🎬 PELÍCULAS 🎬</h2>
+    <div className="peliculas">
+      <div className="pelicula">NETFLIX</div>
+      <div className="pelicula">PRIME</div>
+      <div className="pelicula">MAX</div>
+      <div className="pelicula">DISNEY</div>
+    </div>
+  </div>
+</main>
+    
       {/* Footer */}
       <footer className="footer">
         <div className="footer-content">

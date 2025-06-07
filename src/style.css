@@ -261,6 +261,31 @@ li {
 }
 
 /* ---------------------- */
+/* SECCIONES CON TÍTULO */
+/* ---------------------- */
+.seccion-con-titulo {
+  width: 100%;
+  max-width: 1200px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.titulo-seccion {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  color: white;
+  text-shadow: 0 0 10px rgba(79, 195, 247, 0.7);
+}
+
+/* Ajustes para móvil */
+@media (max-width: 768px) {
+  .titulo-seccion {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+}
+
+/* ---------------------- */
 /* APP */
 /* ---------------------- */
 .inicio {
@@ -312,6 +337,124 @@ li {
     font-size: 1rem; /* Tamaño de fuente reducido para móviles */
   }
 }
+
+/*-----------------*/
+/* CAJAS LIBROS */
+/*-----------------*/
+.libros {
+  display: flex;
+  flex-wrap: wrap; /* Permite que las cajas se envuelvan en múltiples líneas */
+  justify-content: space-around;
+  width: 100%;
+  gap: 15px;
+  padding: 20px 0;
+}
+
+.libro {
+  width: calc(50% - 10px); /* 2 cajas por fila (restamos el gap) */
+  min-height: 200px;
+  background-color: #0a0a0a;
+  color: white;
+  border: 2px solid #333;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 15px;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 1px solid rgba(79, 195, 247, 0.3); /* Borde tenue azul */
+  box-shadow: 0 0 10px rgba(79, 195, 247, 0.3); /* Sombra neon suave */
+  transition: all 0.3s ease;
+}
+
+/* Efecto hover (opcional) */
+.libro:hover {
+ border-color: #4fc3f7; /* Borde azul brillante al pasar el mouse */
+  box-shadow: 0 0 20px rgba(79, 195, 247, 0.7); /* Efecto neon más intenso */
+}
+
+/* Ajustes para pantallas más grandes (ej: escritorio) */
+@media (min-width: 768px) {
+  .libro {
+    width: calc(25% - 15px); /* 4 cajas por fila en desktop */
+  }
+}
+/* Estilo para el texto dentro de las cajas */
+.libro h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.libro p {
+  margin: 10px 0 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+
+/*-----------------*/
+/* CAJAS PELICULAS */
+/*-----------------*/
+.peliculas {
+  display: flex;
+  flex-wrap: wrap; /* Permite que las cajas se envuelvan en múltiples líneas */
+  justify-content: space-around;
+  width: 100%;
+  gap: 15px;
+  padding: 20px 0;
+}
+
+.pelicula {
+  width: calc(50% - 10px); /* 2 cajas por fila (restamos el gap) */
+  min-height: 200px;
+  background-color: #0a0a0a;
+  color: white;
+  border: 2px solid #333;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 15px;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 1px solid rgba(79, 195, 247, 0.3); /* Borde tenue azul */
+  box-shadow: 0 0 10px rgba(79, 195, 247, 0.3); /* Sombra neon suave */
+  transition: all 0.3s ease;
+}
+
+/* Efecto hover (opcional) */
+.pelicula:hover {
+ border-color: #4fc3f7; /* Borde azul brillante al pasar el mouse */
+  box-shadow: 0 0 20px rgba(79, 195, 247, 0.7); /* Efecto neon más intenso */
+}
+
+/* Ajustes para pantallas más grandes (ej: escritorio) */
+@media (min-width: 768px) {
+  .pelicula {
+    width: calc(25% - 15px); /* 4 cajas por fila en desktop */
+  }
+}
+/* Estilo para el texto dentro de las cajas */
+.pelicula h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.pelicula p {
+  margin: 10px 0 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
 
 /* Asegúrate de que el contenedor padre tenga estas propiedades */
 .main-content {
