@@ -22,7 +22,7 @@ function App() {
       <main className="main-content">
         <div className="inicio">
           <h1>🔥 BLACK BOOKS 🔥</h1>
-          <p>¿Te gusta perderte entre las profundidades de las letras?</p>
+          <p>¿Quieres perderte entre las profundidades de las letras?</p>
         </div>
 
         {/* Sección LIBROS - Versión mejorada */}
