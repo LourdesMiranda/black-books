@@ -110,10 +110,10 @@ function App() {
               <div className="puntuacion">
                 <div className="estrellas">
                   {[...Array(5)].map((_, i) => (
-                    <span key={i} className={i < 3 ? "estrella-llena" : "estrella-vacia"}>★</span>
+                    <span key={i} className={i < 4 ? "estrella-llena" : "estrella-vacia"}>★</span>
                   ))}
                 </div>
-                <span className="puntuacion-numero">3/5</span>
+                <span className="puntuacion-numero">4/5</span>
               </div>
             </div>
 
