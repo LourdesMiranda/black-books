@@ -5,7 +5,6 @@ import './style.css';
 function App() {
   const [showDisclaimer, setShowDisclaimer] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
-  const [searchCategory, setSearchCategory] = useState('all');
   const [subscriptionForm, setSubscriptionForm] = useState({
     username: '',
     password: '',
@@ -14,6 +13,73 @@ function App() {
     favoriteAuthor: ''
   });
   const [readingClubMembers, setReadingClubMembers] = useState([]);
+  const [showPopup, setShowPopup] = useState(false);
+  const [currentPlatform, setCurrentPlatform] = useState('');
+
+  // Datos de recomendaciones
+  const platformRecommendations = {
+    netflix: [
+      { 
+        title: "Stranger Things", 
+        image: "/Strangerthings.jpg", 
+        rating: 4.5,
+        opinion: "Una emocionante mezcla de nostalgia ochentera y terror sobrenatural. Perfecta para los amantes del misterio."
+      },
+      { 
+        title: "The Crown", 
+        image: "/thecrown.jpg", 
+        rating: 4.8,
+        opinion: "Un drama histórico impresionante que ofrece una mirada íntima a la realeza británica."
+      }
+    ],
+    prime: [
+      { 
+        title: "The Boys", 
+        image: "/theboys.jpg", 
+        rating: 4.7,
+        opinion: "Una refrescante y violenta deconstrucción del género de superhéroes. No apta para sensibles."
+      },
+      { 
+        title: "The Marvelous Mrs. Maisel", 
+        image: "/maisel.jpg", 
+        rating: 4.6,
+        opinion: "Divertidísima comedia con diálogos rápidos y un vestuario espectacular."
+      }
+    ],
+    max: [
+      { 
+        title: "Game of Thrones", 
+        image: "/got.jpg", 
+        rating: 4.9,
+        opinion: "Epica fantasía medieval con personajes complejos y giros inesperados."
+      },
+      { 
+        title: "Succession", 
+        image: "/succession.jpg", 
+        rating: 4.8,
+        opinion: "Un retrato mordaz del poder y la riqueza. Los diálogos son afilados."
+      }
+    ],
+    disney: [
+      { 
+        title: "The Mandalorian", 
+        image: "/mando.jpg", 
+        rating: 4.7,
+        opinion: "Una delicia para fans de Star Wars. Baby Yoda robó nuestros corazones."
+      },
+      { 
+        title: "Loki", 
+        image: "/loki.jpg", 
+        rating: 4.5,
+        opinion: "Tom Hiddleston lleva el peso de esta intrigante serie sobre el multiverso."
+      }
+    ]
+  };
+
+  const togglePopup = (platform) => {
+    setCurrentPlatform(platform);
+    setShowPopup(!showPopup);
+  };
 
   const toggleDisclaimer = () => {
     setShowDisclaimer(!showDisclaimer);
@@ -21,7 +87,7 @@ function App() {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    console.log(`Buscando: "${searchTerm}" en categoría: ${searchCategory}`);
+    console.log(`Buscando: "${searchTerm}"`);
   };
 
   const handleSubscriptionChange = (e) => {
@@ -34,16 +100,12 @@ function App() {
 
   const handleSubscriptionSubmit = (e) => {
     e.preventDefault();
-    // Validación básica
     if (!subscriptionForm.username || !subscriptionForm.email) {
       alert('Por favor completa al menos el nombre de usuario y el email');
       return;
     }
     
-    // Agregar al club de lectura
     setReadingClubMembers(prev => [...prev, subscriptionForm]);
-    
-    // Limpiar el formulario
     setSubscriptionForm({
       username: '',
       password: '',
@@ -70,7 +132,7 @@ function App() {
           <h1>🔥 BLACK BOOKS 🔥</h1>
           <p>¿Quieres perderte entre las profundidades de las letras?</p>
           
-          {/* Buscador mejorado */}
+          {/* Buscador */}
           <form onSubmit={handleSearch} className="book-search">
             <div className="search-container">
               <div className="search-input-container">
@@ -188,49 +250,77 @@ function App() {
           </div>
         </div>
 
-        {/* Sección PELÍCULAS */}
+          {/* Sección PELÍCULAS */}
         <div className="seccion-con-titulo">
           <h2 className="titulo-seccion">🎬 PELÍCULAS 🎬</h2>
           <div className="peliculas">
             <div className="pelicula">
-              <img src={process.env.PUBLIC_URL + "/Netflix_Logo.jpg"} alt="Netflix" className="imgpelis" />
+              <a href='https://www.netflix.com/es/' target="_blank" rel="noopener noreferrer">             
+                <img src={process.env.PUBLIC_URL + "/Netflix_Logo.jpg"} alt="Netflix" className="imgpelis" />
+              </a>
+              <p onClick={() => togglePopup('netflix')}>👉 ¿Qué ver en Netflix?</p>
             </div>
             <div className="pelicula">
-              <img src={process.env.PUBLIC_URL + "/Prime_Logo.jpg"} alt="Prime" className="imgpelis" />
+              <a href='https://www.primevideo.com/-/es/offers/nonprimehomepage/ref=dv_web_force_root?language=es' target="_blank" rel="noopener noreferrer">             
+                <img src={process.env.PUBLIC_URL + "/Prime_Logo.jpg"} alt="Prime" className="imgpelis" />
+              </a>
+              <p onClick={() => togglePopup('prime')}>👉 ¿Qué ver en Prime?</p> 
             </div>
             <div className="pelicula">
-              <img src={process.env.PUBLIC_URL + "/max_logo.jpg"} alt="Max" className="imgpelis" />
+              <a href='https://www.max.com/es/es' target="_blank" rel="noopener noreferrer">
+                <img src={process.env.PUBLIC_URL + "/max_logo.jpg"} alt="Max" className="imgpelis" />
+              </a> 
+              <p onClick={() => togglePopup('max')}>👉 ¿Qué ver en Max?</p>
             </div>
             <div className="pelicula">
-              <img src={process.env.PUBLIC_URL + "/diseny_logo.jpg"} alt="Disney" className="imgpelis" />
+              <a href='https://www.disneyplus.com/es-es' target="_blank" rel="noopener noreferrer">
+                <img src={process.env.PUBLIC_URL + "/diseny_logo.jpg"} alt="Disney" className="imgpelis" />
+              </a> 
+              <p onClick={() => togglePopup('disney')}>👉 ¿Qué ver en Disney?</p>
             </div>
           </div>
         </div>
-
-        {/* Sección CLUB DE LECTURA */}
-        {readingClubMembers.length > 0 && (
-          <div className="seccion-con-titulo">
-            <h2 className="titulo-seccion">📚 CLUB DE LECTURA 📚</h2>
-            <div className="reading-club">
-              <div className="members-grid">
-                {readingClubMembers.map((member, index) => (
-                  <div key={index} className="member-card">
-                    <h3>{member.username}</h3>
-                    <p><strong>Email:</strong> {member.email}</p>
-                    {member.favoriteBook && <p><strong>Libro favorito:</strong> {member.favoriteBook}</p>}
-                    {member.favoriteAuthor && <p><strong>Autor favorito:</strong> {member.favoriteAuthor}</p>}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        )}
       </main>
 
-      {/* Footer rediseñado */}
+      {/* Popup de recomendaciones */}
+      {showPopup && (
+        <div className="recommendation-popup">
+          <div className="popup-overlay" onClick={() => setShowPopup(false)}></div>
+          <div className="popup-content">
+            <div className="popup-header">
+              <h3>Recomendaciones en {currentPlatform.charAt(0).toUpperCase() + currentPlatform.slice(1)}</h3>
+              <button className="close-popup" onClick={() => setShowPopup(false)}>×</button>
+            </div>
+            <div className="recommendations-grid">
+              {platformRecommendations[currentPlatform].map((item, index) => (
+                <div key={index} className="recommendation-item">
+                  <img 
+                    src={process.env.PUBLIC_URL + item.image} 
+                    alt={item.title} 
+                    className="recommendation-image"
+                  />
+                  <div className="recommendation-info">
+                    <h4>{item.title}</h4>
+                    <div className="recommendation-rating">
+                      {[...Array(5)].map((_, i) => (
+                        <span key={i} className={i < Math.floor(item.rating) ? "star-filled" : "star-empty"}>★</span>
+                      ))}
+                      <span>{item.rating}/5</span>
+                    </div>
+                    <div className="recommendation-opinion">
+                      <p><strong>Mi opinión:</strong> {item.opinion}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Footer */}
       <footer className="footer">
         <div className="footer-content">
-          {/* Columna izquierda - Formulario */}
           <div className="footer-left">
             <div className="subscription-form">
               <h3>Únete al Club de Lectura</h3>
@@ -293,10 +383,8 @@ function App() {
             </div>
           </div>
 
-          {/* Columna derecha - Perfil y redes */}
           <div className="footer-right">
             <div className="profile-social-container">
-              {/* Tu foto */}
               <div className="footer-profile">
                 <img 
                   src={process.env.PUBLIC_URL + "/lourdesmirandamoreno.jpg"} 
@@ -306,7 +394,6 @@ function App() {
                 <p>BLACK BOOKS</p>
               </div>
 
-              {/* Redes sociales */}
               <div className="social-container">
                 <h3>Sígueme</h3>
                 <div className="social-icons">
@@ -328,7 +415,6 @@ function App() {
               </div>
             </div>
 
-            {/* Aviso legal */}
             <div className="disclaimer-container">
               <button onClick={toggleDisclaimer} className="disclaimer-button">
                 {showDisclaimer ? 'Ocultar aviso legal' : 'Mostrar aviso legal'}
