@@ -1,0 +1,32 @@
+/* Leidos.css */
+.leidos-container {
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 700px;
+  margin: 40px auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  font-family: 'Arial', sans-serif;
+  color: #fff; /* Texto blanco para contrastar con el fondo oscuro */
+  position: relative; /* Necesario para z-index */
+  z-index: 2; /* Asegura que el contenido esté POR ENCIMA del fondo */
+  background: rgba(10, 10, 10, 0.7); /* Fondo semitransparente para legibilidad */
+  backdrop-filter: blur(5px); /* Efecto de vidrio esmerilado */
+}
+
+/* Fondo animado (ajustado) */
+.animated-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1; /* Detrás del contenedor (z-index menor) */
+  background-image: url('fondo_calaveraIA.jpg');
+  opacity: 1; /* Asegúrate de que sea 1 (no 2, eso es inválido) */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  animation: moverFondo 18s ease-in-out infinite alternate;
+}
+
+/* Elimina el .static-background (no es necesario si quieres ver la imagen) */

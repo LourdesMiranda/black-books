@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './style.css';
 
 function Header() {
@@ -17,15 +18,19 @@ function Header() {
   }, [menuOpen]);
 
   return (
-    <header className="header">
+ <header className="header">
       <div className="header-content">
         <div className="logo-container">
-          <img 
-            src={process.env.PUBLIC_URL + "/images/logo_bb.jpg"}
-            alt="Lourdes Miranda" 
-            className="profile-img"
-          />
-          <h1>BLACK BOOKS</h1>
+          {/* Aquí envuelvo logo y texto en Link a la raíz */}
+          <Link to="/" onClick={() => setMenuOpen(false)} className="logo-link" style={{display: 'flex', alignItems: 'center', textDecoration: 'none', color: 'inherit'}}>
+            <img 
+              src={process.env.PUBLIC_URL + "/images/logo_bb.jpg"}
+              alt="Lourdes Miranda" 
+              className="profile-img"
+              style={{marginRight: '10px'}}
+            />
+            <h1>BLACK BOOKS</h1>
+          </Link>
         </div>
         
         <button 
@@ -38,7 +43,7 @@ function Header() {
         
         <nav className={`nav-links ${menuOpen ? 'active' : ''}`}>
           <ul>
-            <li><a href="#leidos" onClick={() => setMenuOpen(false)}>Leídos</a></li>
+            <li><Link to="/Leidos" onClick={() => setMenuOpen(false)}>Leídos</Link></li>
             <li><a href="#recomendados" onClick={() => setMenuOpen(false)}>Recomendados</a></li>
             <li><a href="#autores" onClick={() => setMenuOpen(false)}>Autores</a></li>
             <li><a href="#articulos" onClick={() => setMenuOpen(false)}>Artículos</a></li>
