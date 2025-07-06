@@ -1,15 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './style.css';
+import { BrowserRouter } from 'react-router-dom';
 import App from './App';
+import './style.css';
 
-// Asegúrate de que el elemento root existe en tu HTML
-const rootElement = document.getElementById('root');
-if (rootElement) {
-  const root = ReactDOM.createRoot(rootElement);
-  root.render(
-    <React.StrictMode>
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <BrowserRouter basename="/black-books">
       <App />
-    </React.StrictMode>
-  );
-}
+    </BrowserRouter>
+  </React.StrictMode>
+);

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom'; // ¡No importes BrowserRouter aquí!
 import Header from './Header';
-import Leidos from './pages/Leidos';
+import Leidos from './pages/Leidos'; // Importación con mayúscula
 import './style.css';
 
 function App() {
@@ -24,13 +24,13 @@ function App() {
         title: "Stranger Things", 
         image: "/Strangerthings.jpg", 
         rating: 4.8,
-        opinion: "Una emocionante mezcla de nostalgia ochentera y terror sobrenatural. Perfecta para los amantes del misterio."
+        opinion: "Una emocionante mezcla de nostalgia ochentera y terror sobrenatural."
       },
       { 
         title: "The Crown", 
         image: "/Juegodelcalamar.jpg", 
         rating: 4.4,
-        opinion: "Un drama histórico impresionante que ofrece una mirada íntima a la realeza británica."
+        opinion: "Un drama histórico impresionante sobre la realeza británica."
       }
     ],
     prime: [
@@ -38,13 +38,7 @@ function App() {
         title: "The Boys", 
         image: "/theboys.jpg", 
         rating: 4.7,
-        opinion: "Una refrescante y violenta deconstrucción del género de superhéroes. No apta para sensibles."
-      },
-      { 
-        title: "The Marvelous Mrs. Maisel", 
-        image: "/maisel.jpg", 
-        rating: 4.6,
-        opinion: "Divertidísima comedia con diálogos rápidos y un vestuario espectacular."
+        opinion: "Violenta deconstrucción del género de superhéroes."
       }
     ],
     max: [
@@ -52,13 +46,7 @@ function App() {
         title: "Game of Thrones", 
         image: "/got.jpg", 
         rating: 4.9,
-        opinion: "Epica fantasía medieval con personajes complejos y giros inesperados."
-      },
-      { 
-        title: "Succession", 
-        image: "/succession.jpg", 
-        rating: 4.8,
-        opinion: "Un retrato mordaz del poder y la riqueza. Los diálogos son afilados."
+        opinion: "Épica fantasía medieval con personajes complejos."
       }
     ],
     disney: [
@@ -66,13 +54,7 @@ function App() {
         title: "The Mandalorian", 
         image: "/mando.jpg", 
         rating: 4.7,
-        opinion: "Una delicia para fans de Star Wars. Baby Yoda robó nuestros corazones."
-      },
-      { 
-        title: "Loki", 
-        image: "/loki.jpg", 
-        rating: 4.5,
-        opinion: "Tom Hiddleston lleva el peso de esta intrigante serie sobre el multiverso."
+        opinion: "Una delicia para fans de Star Wars."
       }
     ]
   };
@@ -119,7 +101,7 @@ function App() {
   };
 
   return (
-    <Router>
+    <>
       <Header />
       <Routes>
         <Route path="/" element={
@@ -426,9 +408,9 @@ function App() {
             </main>
           </div>
         } />
-        <Route path="/leidos" element={<Leidos />} />
+      <Route path="/Leidos" element={<Leidos />} /> 
       </Routes>
-    </Router>
+    </>
   );
 }
 
