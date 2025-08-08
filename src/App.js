@@ -24,13 +24,16 @@ function App() {
         title: "Stranger Things", 
         image: "/Strangerthings.jpg", 
         rating: 4.8,
-        opinion: "Una emocionante mezcla de nostalgia ochentera y terror sobrenatural."
+        opinion: "Una emocionante mezcla de nostalgia ochentera y terror sobrenatural.",
+        url: "https://www.netflix.com/title/80057281"
       },
+    
       { 
         title: "The Crown", 
         image: "/Juegodelcalamar.jpg", 
         rating: 4.4,
-        opinion: "Un drama histórico impresionante sobre la realeza británica."
+        opinion: "Un drama histórico impresionante sobre la realeza británica.",
+        url: "https://www.netflix.com/title/80057281"
       }
     ],
     prime: [
@@ -38,7 +41,8 @@ function App() {
         title: "The Boys", 
         image: "/theboys.jpg", 
         rating: 4.7,
-        opinion: "Violenta deconstrucción del género de superhéroes."
+        opinion: "Violenta deconstrucción del género de superhéroes.",
+         url: "https://www.primevideo.com/detail/0L9V8QZJQZJQZJQZJQZJQZJQZJQZJQZJ"
       }
     ],
     max: [
@@ -46,7 +50,8 @@ function App() {
         title: "Game of Thrones", 
         image: "/got.jpg", 
         rating: 4.9,
-        opinion: "Épica fantasía medieval con personajes complejos."
+        opinion: "Épica fantasía medieval con personajes complejos.",
+         url: "https://www.max.com/movies/game-of-thrones"
       }
     ],
     disney: [
@@ -54,7 +59,8 @@ function App() {
         title: "The Mandalorian", 
         image: "/mando.jpg", 
         rating: 4.7,
-        opinion: "Una delicia para fans de Star Wars."
+        opinion: "Una delicia para fans de Star Wars.",
+        url: "https://www.disneyplus.com/series/the-mandalorian/3jLIGMDYINqD"
       }
     ]
   };
@@ -259,39 +265,48 @@ function App() {
 
               {/* Popup de recomendaciones */}
               {showPopup && (
-                <div className="recommendation-popup">
-                  <div className="popup-overlay" onClick={() => setShowPopup(false)}></div>
-                  <div className="popup-content">
-                    <div className="popup-header">
-                      <h3>Recomendaciones en {currentPlatform.charAt(0).toUpperCase() + currentPlatform.slice(1)}</h3>
-                      <button className="close-popup" onClick={() => setShowPopup(false)}>×</button>
-                    </div>
-                    <div className="recommendations-grid">
-                      {platformRecommendations[currentPlatform].map((item, index) => (
-                        <div key={index} className="recommendation-item">
-                          <img 
-                            src={process.env.PUBLIC_URL + item.image} 
-                            alt={item.title} 
-                            className="recommendation-image"
-                          />
-                          <div className="recommendation-info">
-                            <h4>{item.title}</h4>
-                            <div className="recommendation-rating">
-                              {[...Array(5)].map((_, i) => (
-                                <span key={i} className={i < Math.floor(item.rating) ? "star-filled" : "star-empty"}>★</span>
-                              ))}
-                              <span>{item.rating}/5</span>
-                            </div>
-                            <div className="recommendation-opinion">
-                              <p><strong>Mi opinión:</strong> {item.opinion}</p>
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              )}
+  <div className="recommendation-popup">
+    <div className="popup-overlay" onClick={() => setShowPopup(false)}></div>
+    <div className="popup-content">
+      <div className="popup-header">
+        <h3>Recomendaciones en {currentPlatform.charAt(0).toUpperCase() + currentPlatform.slice(1)}</h3>
+        <button className="close-popup" onClick={() => setShowPopup(false)}>×</button>
+      </div>
+      <div className="recommendations-grid">
+        {platformRecommendations[currentPlatform].map((item, index) => (
+          <div key={index} className="recommendation-item">
+            <img 
+              src={process.env.PUBLIC_URL + item.image} 
+              alt={item.title} 
+              className="recommendation-image"
+            />
+            <div className="recommendation-info">
+              <h4>
+                <a 
+                  href={item.url} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="recommendation-link"
+                >
+                  {item.title}
+                </a>
+              </h4>
+              <div className="recommendation-rating">
+                {[...Array(5)].map((_, i) => (
+                  <span key={i} className={i < Math.floor(item.rating) ? "star-filled" : "star-empty"}>★</span>
+                ))}
+                <span>{item.rating}/5</span>
+              </div>
+              <div className="recommendation-opinion">
+                <p><strong>Mi opinión:</strong> {item.opinion}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+)}
 
               {/* Footer */}
               <footer className="footer">
