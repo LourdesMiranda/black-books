@@ -798,10 +798,11 @@ body, html {
 /* Estilos para el popup centrado */
 .recommendation-popup {
   position: fixed;
-  top: 0;
+  margin-top: 20px;
+  top: 110px;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 85%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -831,6 +832,31 @@ body, html {
   max-height: 90vh;
   overflow-y: auto;
   animation: fadeIn 0.3s ease;
+  overflow-y: auto; /* Asegura que tenga scroll cuando sea necesario */
+  
+  /* Personalización de scroll SOLO para este contenedor */
+  scrollbar-width: thin; /* Para Firefox */
+  scrollbar-color: #4fc3f7 rgba(10, 10, 10, 0.8); /* Para Firefox */
+}
+
+.popup-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.popup-content::-webkit-scrollbar-track {
+  background: rgba(10, 10, 10, 0.8);
+  border-radius: 0 10px 10px 0;
+}
+
+.popup-content::-webkit-scrollbar-thumb {
+  background: linear-gradient(#4fc3f7, #2a8fce);
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.3);
+}
+
+.popup-content::-webkit-scrollbar-thumb:hover {
+  background: #4fc3f7;
+  box-shadow: 0 0 5px rgba(79, 195, 247, 0.7);
 }
 
 .popup-header {

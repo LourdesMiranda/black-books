@@ -29,11 +29,19 @@ function App() {
       },
     
       { 
-        title: "The Crown", 
+        title: "Wednesday", 
+        image: "/Wednesday.jpg", 
+        rating: 4.7,
+        opinion: "Un misterio gótico donde la rareza se convierte en superpoder y la muerte se adorna con sarcasmo",
+        url: "https://www.netflix.com/es/title/81231974"
+      },
+    
+      { 
+        title: "Juego del calamar", 
         image: "/Juegodelcalamar.jpg", 
-        rating: 4.4,
+        rating: 4.3,
         opinion: "Un drama histórico impresionante sobre la realeza británica.",
-        url: "https://www.netflix.com/title/80057281"
+        url: "https://www.netflix.com/es/title/81040344"
       }
     ],
     prime: [
@@ -298,7 +306,7 @@ function App() {
                 <span>{item.rating}/5</span>
               </div>
               <div className="recommendation-opinion">
-                <p><strong>Mi opinión:</strong> {item.opinion}</p>
+                <p><strong>La defino en una frase:</strong> {item.opinion}</p>
               </div>
             </div>
           </div>
