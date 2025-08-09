@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/black-books/static/css/main.97fd265e.css",
-    "main.js": "/black-books/static/js/main.c6dfc037.js",
+    "main.css": "/black-books/static/css/main.dac7e82c.css",
+    "main.js": "/black-books/static/js/main.7fbd354b.js",
     "static/media/fondo_calaveraIA.jpg": "/black-books/static/media/fondo_calaveraIA.6790d82ac70d68aeebd7.jpg",
     "index.html": "/black-books/index.html",
-    "main.97fd265e.css.map": "/black-books/static/css/main.97fd265e.css.map",
-    "main.c6dfc037.js.map": "/black-books/static/js/main.c6dfc037.js.map"
+    "main.dac7e82c.css.map": "/black-books/static/css/main.dac7e82c.css.map",
+    "main.7fbd354b.js.map": "/black-books/static/js/main.7fbd354b.js.map"
   },
   "entrypoints": [
-    "static/css/main.97fd265e.css",
-    "static/js/main.c6dfc037.js"
+    "static/css/main.dac7e82c.css",
+    "static/js/main.7fbd354b.js"
   ]
 }
