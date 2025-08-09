@@ -1,0 +1,78 @@
+/* Libros */
+.libros {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.libro {
+  width: calc(25% - 20px);
+  min-height: 220px;
+  background-color: rgba(10, 10, 10, 0.8);
+  color: white;
+  border-radius: 10px;
+  padding: 15px;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(79, 195, 247, 0.3);
+  box-shadow: 0 0 15px rgba(79, 195, 247, 0.2);
+}
+
+.libro:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(79, 195, 247, 0.4);
+  border-color: #4fc3f7;
+}
+
+.libro-content {
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.libro-imagen {
+  width: 100px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
+  border: 1px solid #4fc3f7;
+  box-shadow: 0 0 10px rgba(79, 195, 247, 0.3);
+}
+
+.libro-texto {
+  flex: 1;
+  text-align: left;
+}
+
+.puntuacion {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px dashed rgba(79, 195, 247, 0.3);
+}
+
+.estrellas {
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+}
+
+.estrella-llena {
+  color: #FFD700;
+  text-shadow: 0 0 5px rgba(255, 215, 0, 0.7);
+}
+
+.estrella-vacia {
+  color: #555;
+}
+
+.puntuacion-numero {
+  color: #4fc3f7;
+  font-weight: bold;
+  font-size: 0.9rem;
+}

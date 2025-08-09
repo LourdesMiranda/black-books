@@ -40,7 +40,7 @@ function App() {
         title: "Juego del calamar", 
         image: "/Juegodelcalamar.jpg", 
         rating: 4.3,
-        opinion: "Un drama histórico impresionante sobre la realeza británica.",
+        opinion: "Un cruel recordatorio de que la desesperación convierte la vida en un juego… y la muerte en la regla",
         url: "https://www.netflix.com/es/title/81040344"
       }
     ],
