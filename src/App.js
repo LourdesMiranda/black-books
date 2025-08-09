@@ -51,16 +51,50 @@ function App() {
         rating: 4.6,
         opinion: "Una pesadilla disfrazada de payaso, donde la inocencia flota… y tú podrías ser el siguiente en flotar 🎈",
          url: "https://www.primevideo.com/-/es/detail/It-Eso/0IRMXMZIU9ST0QQBV9UZRPEBM3"
+      },
+      
+      { 
+        title: "Terrifier", 
+        image: "/Terrifier.jpg", 
+        rating: 4.2,
+        opinion: "Terrifier es la risa más cruel pintada en sangre, un circo de pesadillas donde el cuchillo siempre tiene la última palabra.",
+         url: "https://www.primevideo.com/detail/Terrifier/0H8L6ZG6PXV81PAW1DUQL4XGG8"
+      },
+
+            { 
+        title: "The Boogeyman", 
+        image: "/theboogeyman.jpg", 
+        rating: 4.4,
+        opinion: "The Boogeyman es la sombra que respira bajo tu cama, un susurro oscuro que convierte el miedo infantil en terror eterno.",
+         url: "https://www.primevideo.com/-/es/detail/Boogeyman-Tu-miedo-es-real/0KNMDRN7AOYLDIY7ZUE2CU37S3"
       }
+
     ],
     max: [
       { 
         title: "Game of Thrones", 
         image: "/got.jpg", 
-        rating: 4.9,
-        opinion: "Épica fantasía medieval con personajes complejos.",
-         url: "https://www.max.com/movies/game-of-thrones"
+        rating: 4.8,
+        opinion: "Un tablero manchado de sangre, donde el poder se gana con fuego, mentiras… y espadas afiladas.",
+         url: "https://play.hbomax.com/show/4f6b4985-2dc9-4ab6-ac79-d60f0860b0ac"
+      },
+
+        { 
+        title: "Destino final", 
+        image: "/destinofinal.jpg", 
+        rating: 4.2,
+        opinion: "El susurro helado de la muerte, un juego macabro donde no importa cuánto corras… siempre sabe dónde encontrarte.",
+         url: "https://play.hbomax.com/movie/16d51fc4-358d-4138-b648-da0e2cf5f216"
+      },
+
+      { 
+        title: "Expediente Warren: The Conjuring", 
+        image: "/expedientewarren.jpg", 
+        rating: 4.7,
+        opinion: "La invitación a una casa donde las paredes guardan gritos, y cada sombra susurra que no saldrás solo.",
+         url: "https://play.hbomax.com/movie/d1b146e9-7426-4463-804d-3ca656e38492"
       }
+
     ],
     disney: [
       { 
