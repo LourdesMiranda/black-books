@@ -46,11 +46,11 @@ function App() {
     ],
     prime: [
       { 
-        title: "The Boys", 
-        image: "/theboys.jpg", 
-        rating: 4.7,
-        opinion: "Violenta deconstrucción del género de superhéroes.",
-         url: "https://www.primevideo.com/detail/0L9V8QZJQZJQZJQZJQZJQZJQZJQZJQZJ"
+        title: "It", 
+        image: "/it.jpg", 
+        rating: 4.6,
+        opinion: "Una pesadilla disfrazada de payaso, donde la inocencia flota… y tú podrías ser el siguiente en flotar 🎈",
+         url: "https://www.primevideo.com/-/es/detail/It-Eso/0IRMXMZIU9ST0QQBV9UZRPEBM3"
       }
     ],
     max: [
