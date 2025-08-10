@@ -98,11 +98,27 @@ function App() {
     ],
     disney: [
       { 
-        title: "The Mandalorian", 
-        image: "/mando.jpg", 
-        rating: 4.7,
-        opinion: "Una delicia para fans de Star Wars.",
-        url: "https://www.disneyplus.com/series/the-mandalorian/3jLIGMDYINqD"
+        title: "American Horror Story", 
+        image: "/ahs.jpg", 
+        rating: 4.5,
+        opinion: "Un carnaval de miedos donde cada temporada abre una puerta distinta… y todas conducen al mismo infierno.",
+        url: "https://www.disneyplus.com/es-es/browse/entity-a67a233c-fcfe-4e8e-b000-052603ddd616"
+      },
+
+      { 
+        title: "Noche de Boda", 
+        image: "/nochedebodas.jpg", 
+        rating: 4.1,
+        opinion: "Un brindis con sangre, un juego mortal donde decir ‘sí, acepto’ puede ser tu última decisión.",
+        url: "https://www.disneyplus.com/es-es/browse/entity-b5393a64-e0af-4199-9888-69b93907d8b3"
+      },
+
+      { 
+        title: "Mansión Encantada", 
+        image: "/mansionencantada.jpg", 
+        rating: 4.4,
+        opinion: "Un paseo entre fantasmas con más secretos que paredes, donde cada rincón te invita… y te atrapa.",
+        url: "https://www.disneyplus.com/es-es/browse/entity-843c077e-cc0c-4b25-987b-7177bb605af8?distributionPartner=google"
       }
     ]
   };
@@ -192,22 +208,22 @@ function App() {
                   <div className="libro">
                     <div className="libro-content">
                       <img 
-                        src={process.env.PUBLIC_URL + "/mundo_perdido.jpg"} 
-                        alt="Mundo Perdido" 
+                        src={process.env.PUBLIC_URL + "/Ellibrodeestopa.jpg"} 
+                        alt="El libro de Estopa" 
                         className="libro-imagen"
                       />
                       <div className="libro-texto">
                         <h3>LIBRO ACTUAL</h3>
-                        <p>Libro que actualmente estoy leyendo: Mundo Perdido</p>
+                        <p>El libro de Estopa</p>
                       </div>
                     </div>
                     <div className="puntuacion">
                       <div className="estrellas">
                         {[...Array(5)].map((_, i) => (
-                          <span key={i} className={i < 4 ? "estrella-llena" : "estrella-vacia"}>★</span>
+                          <span key={i} className={i < 3 ? "estrella-llena" : "estrella-vacia"}>★</span>
                         ))}
                       </div>
-                      <span className="puntuacion-numero">4/5</span>
+                      <span className="puntuacion-numero">3'5/5</span>
                     </div>
                   </div>
 
@@ -215,22 +231,22 @@ function App() {
                   <div className="libro">
                     <div className="libro-content">
                       <img 
-                        src={process.env.PUBLIC_URL + "/doctor_sueño.jpg"} 
-                        alt="Doctor Sueño" 
+                        src={process.env.PUBLIC_URL + "/Lasbrujas.jpg"} 
+                        alt="Las Brujas" 
                         className="libro-imagen"
                       />
                       <div className="libro-texto">
                         <h3>LIBRO POR MES</h3>
-                        <p>Mi favorito del mes: Doctor Sueño</p>
+                        <p>Las Brujas</p>
                       </div>
                     </div>
                     <div className="puntuacion">
                       <div className="estrellas">
                         {[...Array(5)].map((_, i) => (
-                          <span key={i} className={i < 4 ? "estrella-llena" : "estrella-vacia"}>★</span>
+                          <span key={i} className={i < 5 ? "estrella-llena" : "estrella-vacia"}>★</span>
                         ))}
                       </div>
-                      <span className="puntuacion-numero">4/5</span>
+                      <span className="puntuacion-numero">4'8/5</span>
                     </div>
                   </div>
 
@@ -238,13 +254,13 @@ function App() {
                   <div className="libro">
                     <div className="libro-content">
                       <img 
-                        src={process.env.PUBLIC_URL + "/doctor_sueño.jpg"} 
-                        alt="Doctor Sueño" 
+                        src={process.env.PUBLIC_URL + "/Holly.jpg"} 
+                        alt="Holly" 
                         className="libro-imagen"
                       />
                       <div className="libro-texto">
                         <h3>LIBRO POR ÉPOCA</h3>
-                        <p>Esta primavera me leí: Doctor sueño</p>
+                        <p>Este verano me leí: Holly</p>
                       </div>
                     </div>
                     <div className="puntuacion">
@@ -253,7 +269,7 @@ function App() {
                           <span key={i} className={i < 4 ? "estrella-llena" : "estrella-vacia"}>★</span>
                         ))}
                       </div>
-                      <span className="puntuacion-numero">4/5</span>
+                      <span className="puntuacion-numero">4'6/5</span>
                     </div>
                   </div>
 
