@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom'; // ¡No importes BrowserRouter aquí!
 import Header from './Header';
-import Leidos from './pages/Leidos'; // Importación con mayúscula
+import Leidos from './pages/Leidos/Leidos'; // Importación con mayúscula
+import Recomendados from './pages/Recomendados/Recomendados';
+import Autores from './pages/Autores/Autores';
+import Articulos from './pages/Articulos/Articulos';
+import ClubLectura from './pages/ClubLectura/ClubLectura';
+import Cementerio from './pages/Cementerio/Cementerio';
+import SobreMi from './pages/SobreMi/SobreMi';
 import './style.css';
 
 function App() {
@@ -481,7 +487,13 @@ function App() {
             </main>
           </div>
         } />
-      <Route path="/Leidos" element={<Leidos />} /> 
+      <Route path="/Leidos" element={<Leidos />} />
+      <Route path="/Recomendados" element={<Recomendados />} />
+      <Route path="/Autores" element={<Autores />} />
+      <Route path="/Articulos" element={<Articulos />} />
+      <Route path="/ClubLectura" element={<ClubLectura />} />
+      <Route path="/Cementerio" element={<Cementerio />} />
+      <Route path="/SobreMi" element={<SobreMi />} />
       </Routes>
     </>
   );

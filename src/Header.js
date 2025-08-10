@@ -43,13 +43,13 @@ function Header() {
         
         <nav className={`nav-links ${menuOpen ? 'active' : ''}`}>
           <ul>
-            <li><Link to="/Leidos" onClick={() => setMenuOpen(false)}>Leídos</Link></li>
-            <li><a href="#recomendados" onClick={() => setMenuOpen(false)}>Recomendados</a></li>
-            <li><a href="#autores" onClick={() => setMenuOpen(false)}>Autores</a></li>
-            <li><a href="#articulos" onClick={() => setMenuOpen(false)}>Artículos</a></li>
-            <li><a href="#club" onClick={() => setMenuOpen(false)}>Club de Lectura</a></li>
-            <li><a href="#cementerio" onClick={() => setMenuOpen(false)}>Cementerio</a></li>
-            <li><a href="#sobre-mi" onClick={() => setMenuOpen(false)}>Sobre mí</a></li>
+             <li><Link to="/Leidos" onClick={() => setMenuOpen(false)}>Leídos</Link></li>
+             <li><Link to="/Recomendados" onClick={() => setMenuOpen(false)}>Recomendados</Link></li>
+             <li><Link to="/Autores" onClick={() => setMenuOpen(false)}>Autores</Link></li>
+             <li><Link to="/Articulos" onClick={() => setMenuOpen(false)}>Artículos</Link></li>
+             <li><Link to="/ClubLectura" onClick={() => setMenuOpen(false)}>Club de Lectura</Link></li>
+             <li><Link to="/Cementerio" onClick={() => setMenuOpen(false)}>Cementerio</Link></li>
+             <li><Link to="/SobreMi" onClick={() => setMenuOpen(false)}>Sobre mí</Link></li>
           </ul>
         </nav>
       </div>
